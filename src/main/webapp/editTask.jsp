@@ -54,7 +54,7 @@
         <label>Content: </label><br>
         <textarea name="taskContent"><jsp:getProperty property="taskContent" name="task"/></textarea><br><br>
         <input type="hidden" name="taskId" value="<jsp:getProperty property="taskId" name="task"/>"><br><br>
-        <button>Republish</button>
+        <button>Edit</button>
     </form>
 
 </div>

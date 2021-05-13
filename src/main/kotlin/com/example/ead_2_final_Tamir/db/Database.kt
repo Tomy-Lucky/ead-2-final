@@ -18,7 +18,7 @@ class Database {
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("insert into \"users\" values(?, ?, ?)")
+                        .prepareStatement("insert into \"users\" (email, name, password) values(?, ?, ?)")
                         .use { preparedStatement ->
                             preparedStatement.setString(1, user.email)
                             preparedStatement.setString(2, user.name)
@@ -93,7 +93,7 @@ class Database {
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("insert into \"task\" values(?, ?, ?)")
+                        .prepareStatement("insert into \"task\" (title, content, user_id) values(?, ?, ?)")
                         .use { preparedStatement ->
                             preparedStatement.setString(1, task.title)
                             preparedStatement.setString(2, task.content)
