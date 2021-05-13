@@ -1,5 +1,5 @@
-<%@ page import="com.example.assignment_rk_2_ead_2.db.Database" %>
-<%@ page import="com.example.assignment_rk_2_ead_2.beans.Task" %>
+<%@ page import="com.example.ead_2_final_Tamir.db.Database" %>
+<%@ page import="com.example.ead_2_final_Tamir.beans.Task" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

@@ -1,6 +1,6 @@
-package com.example.assignment_rk_2_ead_2.servlets
+package com.example.ead_2_final_Tamir.servlets
 
-import com.example.assignment_rk_2_ead_2.db.Database
+import com.example.ead_2_final_Tamir.db.Database
 import java.io.IOException
 import javax.servlet.ServletException
 import javax.servlet.annotation.WebServlet
@@ -15,7 +15,7 @@ class LoginServlet : HttpServlet() {
 
     @Throws(ServletException::class, IOException::class)
     override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
-        val user = db.getUser(request.getParameter("userId"), request.getParameter("password"))
+        val user = db.getUser(request.getParameter("userName"), request.getParameter("password"))
         if (user != null) {
             val oldSession = request.getSession(false)
             oldSession.invalidate()

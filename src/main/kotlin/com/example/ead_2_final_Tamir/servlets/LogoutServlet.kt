@@ -1,4 +1,4 @@
-package com.example.assignment_rk_2_ead_2.servlets
+package com.example.ead_2_final_Tamir.servlets
 
 import java.io.IOException
 import javax.servlet.ServletException

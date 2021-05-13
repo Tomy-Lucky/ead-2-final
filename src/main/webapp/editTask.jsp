@@ -1,6 +1,6 @@
-<%@ page import="com.example.assignment_rk_2_ead_2.db.Database" %>
+<%@ page import="com.example.ead_2_final_Tamir.db.Database" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="task" class="com.example.assignment_rk_2_ead_2.beans.Task"/>
+<jsp:useBean id="task" class="com.example.ead_2_final_Tamir.beans.Task"/>
 <jsp:setProperty property="*" name="task"/>
 
 <%

@@ -1,7 +1,7 @@
-package com.example.assignment_rk_2_ead_2.db
+package com.example.ead_2_final_Tamir.db
 
-import com.example.assignment_rk_2_ead_2.beans.Task
-import com.example.assignment_rk_2_ead_2.beans.User
+import com.example.ead_2_final_Tamir.beans.Task
+import com.example.ead_2_final_Tamir.beans.User
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.SQLException
@@ -58,16 +58,16 @@ class Database {
     }
 
     @Throws(ClassNotFoundException::class)
-    fun getUser(email: String, password: String): User? {
+    fun getUser(userName: String, password: String): User? {
         Class.forName("org.postgresql.Driver")
         return try {
             DriverManager
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("select * from \"users\" where email = ? and password = ?")
+                        .prepareStatement("select * from \"users\" where name = ? and password = ?")
                         .use { preparedStatement ->
-                            preparedStatement.setString(1, email)
+                            preparedStatement.setString(1, userName)
                             preparedStatement.setString(2, password)
                             println(preparedStatement)
                             val resultSet = preparedStatement.executeQuery()

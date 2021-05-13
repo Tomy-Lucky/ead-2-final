@@ -12,6 +12,6 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<%@ include file="IdeaProjects/assignment-rk-2-ead-2/src/main/webapp/tasks.jsp" %>
+<%@ include file="tasks.jsp" %>
 </body>
 </html>

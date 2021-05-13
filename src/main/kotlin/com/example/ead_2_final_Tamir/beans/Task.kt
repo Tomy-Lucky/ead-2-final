@@ -1,4 +1,4 @@
-package com.example.assignment_rk_2_ead_2.beans
+package com.example.ead_2_final_Tamir.beans
 
 import java.io.Serializable
 
