@@ -19,9 +19,9 @@ class TaskServlet : HttpServlet() {
 
     @Throws(ServletException::class, IOException::class)
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-        val oldSession = request.getSession(false)
-        val userId = if (oldSession != null)
-            (request.getSession(false).getAttribute("userId") as String).toLong()
+        val session = request.getSession(false)
+        val userId = if (session != null)
+            (request.getSession(false).getAttribute("userId"))?.toString()?.toLong()
         else null
         val taskId = request.getParameter("taskId").toLong()
 

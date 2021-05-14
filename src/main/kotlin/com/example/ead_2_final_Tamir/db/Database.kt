@@ -65,12 +65,13 @@ class Database {
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("select * from \"users\" where name = ? and password = ?")
+                        .prepareStatement("select * from \"users\" where name = ? and password = ? limit 1")
                         .use { preparedStatement ->
                             preparedStatement.setString(1, userName)
                             preparedStatement.setString(2, password)
                             println(preparedStatement)
                             val resultSet = preparedStatement.executeQuery()
+                            resultSet.next()
                             User(
                                 id = resultSet.getLong("id"),
                                 name = resultSet.getString("name"),
@@ -151,6 +152,7 @@ class Database {
                             preparedStatement.setLong(1, taskId)
                             println(preparedStatement)
                             val resultSet = preparedStatement.executeQuery()
+                            resultSet.next()
                             Task(
                                 id = resultSet.getLong("id"),
                                 title = resultSet.getString("title"),

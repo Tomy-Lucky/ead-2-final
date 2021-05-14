@@ -18,7 +18,7 @@
 <%@ include file="header.jsp" %>
 <body>
 <div class="task">
-    <h4><%=task.getUserId()%>
+    <h4><%=task.getId()%>
     </h4>
     <h3><%=task.getTitle()%>
     </h3>

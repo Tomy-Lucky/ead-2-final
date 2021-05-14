@@ -24,7 +24,7 @@
         for (Task task : tasks) {
 %>
 <div class="task">
-    <h4><%=task.getUserId()%>
+    <h4><%=task.getId()%>
     </h4>
     <h3><a href="task?taskId=<%=task.getId()%>"><%=task.getTitle()%>
     </a></h3>
