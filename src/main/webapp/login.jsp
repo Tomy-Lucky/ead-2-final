@@ -16,16 +16,18 @@
     <a href="registration.jsp">Register</a>
     <a href="logout">Log out</a>
 </nav>
-<form action="login" method="POST">
-    <p сlass="message"><%=(request.getAttribute("message") == null) ? ""
-            : request.getAttribute("message")%>
-    </p>
-    <h2>Log In</h2>
-    <label>Username: </label><br>
-    <input type="text" name="userName"><br><br>
-    <label>Password: </label><br>
-    <input type="password" name="password"><br><br>
-    <button>Log In</button>
-</form>
+<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+    <form action="login" method="POST">
+        <p сlass="message"><%=(request.getAttribute("message") == null) ? ""
+                : request.getAttribute("message")%>
+        </p>
+        <h2>Log In</h2>
+        <label>Username: </label><br>
+        <input type="text" name="userName"><br><br>
+        <label>Password: </label><br>
+        <input type="password" name="password"><br><br>
+        <button>Log In</button>
+    </form>
+</div>
 </body>
 </html>

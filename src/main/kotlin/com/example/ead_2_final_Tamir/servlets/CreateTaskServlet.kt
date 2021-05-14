@@ -20,12 +20,12 @@ class CreateTaskServlet : HttpServlet() {
             id = 0,
             title = request.getParameter("title"),
             content = request.getParameter("content"),
-            userId = (request.getSession(false).getAttribute("userId") as String).toLong()
+            userId = request.getSession(false).getAttribute("userId").toString().toLong()
         )
 
         db.createTask(task = task)
 
-        request.setAttribute("message", "Your task ${task.title} published!")
+        request.setAttribute("message", "Your task ${task.title} added!")
         request.getRequestDispatcher("index.jsp").forward(request, response)
     }
 

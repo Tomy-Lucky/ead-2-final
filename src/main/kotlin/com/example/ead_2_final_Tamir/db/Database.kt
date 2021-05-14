@@ -117,7 +117,7 @@ class Database {
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("select * from \"task\"")
+                        .prepareStatement("select * from \"task\" order by id")
                         .use { preparedStatement ->
                             println(preparedStatement)
                             val resultSet = preparedStatement.executeQuery()
@@ -175,12 +175,11 @@ class Database {
                 .getConnection("jdbc:postgresql://localhost:5432/postgres", "root", "password")
                 .use { connection ->
                     connection
-                        .prepareStatement("update \"task\" set title = ?, content = ?, user_id = ? where id = ?")
+                        .prepareStatement("update \"task\" set title = ?, content = ? where id = ?")
                         .use { preparedStatement ->
                             preparedStatement.setString(1, task.title)
                             preparedStatement.setString(2, task.content)
-                            preparedStatement.setLong(3, task.userId)
-                            preparedStatement.setLong(4, task.id)
+                            preparedStatement.setLong(3, task.id)
 
                             println(preparedStatement)
                             preparedStatement.executeQuery()

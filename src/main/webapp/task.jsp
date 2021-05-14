@@ -11,18 +11,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
-        <title><%=task.getTitle()%>
+        <title>
+            <%=task.getTitle()%>
         </title>
     </head>
 </head>
 <%@ include file="header.jsp" %>
 <body>
 <div class="task">
-    <h4><%=task.getId()%>
+    <h4>
+        <%=task.getId()%>
     </h4>
-    <h3><%=task.getTitle()%>
+    <h3>
+        <%=task.getTitle()%>
     </h3>
-    <p><%=task.getContent()%>
+    <p>
+        <%=task.getContent()%>
     </p>
     <%
         if (session.getAttribute("userName") != null) {
@@ -30,7 +34,7 @@
     <%
         if (session.getAttribute("userId").equals(task.getUserId())) {
     %>
-    <button><a href="editTask.jsp?taskId=<%=task.getId()%>">Edit</a></button>
+    <button><a href="editTask?taskId=<%=task.getId()%>">Edit</a></button>
     <%
             }
         }

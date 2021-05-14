@@ -35,7 +35,7 @@
         if (session.getAttribute("userId") != null) {
             if (session.getAttribute("userId").equals(task.getUserId())) {
     %>
-    <button><a href="editTask.jsp?taskId=<%=task.getId()%>">Edit</a></button>
+    <button><a href="editTask?taskId=<%=task.getId()%>">Edit</a></button>
     <%
             }
         }

@@ -17,17 +17,19 @@
     <a href="logout">Log out</a>
 </nav>
 
-<form action="registration" method="POST">
-    <%=(request.getAttribute("errMessage") == null) ? ""
-            : request.getAttribute("errMessage")%>
-    <h2>Registration</h2>
-    <label>Email: </label><br>
-    <input type="email" name="email"><br><br>
-    <label>Username: </label><br>
-    <input type="text" name="userName"><br><br>
-    <label>Password: </label><br>
-    <input type="password" name="password"><br><br>
-    <button>Register</button>
-</form>
+<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+    <form action="registration" method="POST">
+        <%=(request.getAttribute("errMessage") == null) ? ""
+                : request.getAttribute("errMessage")%>
+        <h2>Registration</h2>
+        <label>Email: </label><br>
+        <input type="email" name="email"><br><br>
+        <label>Username: </label><br>
+        <input type="text" name="userName"><br><br>
+        <label>Password: </label><br>
+        <input type="password" name="password"><br><br>
+        <button>Register</button>
+    </form>
+</div>
 </body>
 </html>
